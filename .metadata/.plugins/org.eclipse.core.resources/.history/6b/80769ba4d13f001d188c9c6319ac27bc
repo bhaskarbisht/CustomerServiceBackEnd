@@ -1,0 +1,11 @@
+package com.csp.Customer.Service;
+
+import java.util.List;
+
+import com.csp.Customer.Entity.Country;
+
+public interface CountryService {
+
+	List<Country> getAllCountries();
+
+}

@@ -1,0 +1,44 @@
+package com.csp.Customer.Controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.csp.Customer.Entity.Customer;
+import com.csp.Customer.Service.CustomerService;
+
+@RestController
+@RequestMapping("/")
+public class CustomerController {
+
+	@Autowired
+	CustomerService customerService;
+	
+	@PostMapping
+	public ResponseEntity<Long> saveCustomer(@RequestBody Customer customer){
+		
+		Long customerId=customerService.saveCustomer();
+		
+	}
+	
+
+	@PostMapping
+	public ResponseEntity<Long> addProduct(@RequestBody ProductRequest productRequest){
+		long productId=productService.addProduct(productRequest);
+		return new ResponseEntity<>(productId,HttpStatus.CREATED);
+	}
+	
+	@GetMapping("/{id}")
+	public ResponseEntity<ProductResponse> getProductById(@PathVariable("id") long productId ){
+		
+		ProductResponse productResponse= productService.getProductById(productId);
+		return new ResponseEntity<>(productResponse,HttpStatus.OK);
+		
+	}
+	
+	
+	
+}

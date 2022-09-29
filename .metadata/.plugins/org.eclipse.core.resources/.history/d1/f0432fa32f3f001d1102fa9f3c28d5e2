@@ -1,0 +1,22 @@
+package com.csp.Customer.Service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.csp.Customer.Entity.Customer;
+import com.csp.Customer.Repository.CustomerRepository;
+
+public class CustomerServiceImpl implements CustomerService{
+
+	@Autowired
+	CustomerRepository customerRepository;
+	
+	@Override
+	public Long saveCustomer(Customer customer) {
+
+		Long customerId=customerRepository.save(customer);
+		return null;
+	}
+
+
+
+}

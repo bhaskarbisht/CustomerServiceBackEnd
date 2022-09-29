@@ -1,0 +1,6 @@
+package com.csp.Customer.Entity;
+
+@Entity
+public class Country {
+
+}

@@ -1,0 +1,7 @@
+package com.csp.Customer.Repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface StateRepository extends JpaRepository<T, ID>{
+
+}

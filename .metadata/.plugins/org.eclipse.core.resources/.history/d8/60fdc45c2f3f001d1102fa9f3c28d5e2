@@ -1,0 +1,6 @@
+package com.csp.Customer.Service;
+
+public interface CustomerService {
+
+
+}

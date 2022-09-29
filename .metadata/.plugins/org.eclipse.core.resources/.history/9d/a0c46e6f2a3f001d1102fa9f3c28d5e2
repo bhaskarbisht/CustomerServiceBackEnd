@@ -1,0 +1,38 @@
+package com.csp.Customer.Entity;
+
+import java.sql.Date;
+
+import javax.persistence.Entity;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class Customer {
+	
+	Long customerId;
+	
+	String firstName;
+	
+	String lastName;
+	
+	String email;
+	
+	String panNo;
+	
+	Date dob; 
+	
+	String contactNo;
+	
+	String password;
+	
+	
+	 
+	
+	
+
+}

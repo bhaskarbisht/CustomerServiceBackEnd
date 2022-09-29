@@ -1,0 +1,9 @@
+package com.csp.Customer.Repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.csp.Customer.Entity.Customer;
+
+public interface CustomerRepository extends JpaRepository<Customer, Long>{
+
+}

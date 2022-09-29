@@ -1,0 +1,15 @@
+package com.csp.Customer.Service;
+
+import com.csp.Customer.Entity.Customer;
+
+public class CustomerServiceImpl implements CustomerService{
+
+	@Override
+	public Long saveCustomer(Customer customer) {
+
+		return null;
+	}
+
+
+
+}

@@ -1,0 +1,48 @@
+package com.csp.Customer.Entity;
+
+import java.sql.Date;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class Customer {
+	
+	   @Id
+	   @GeneratedValue(strategy = GenerationType.AUTO)
+	Long customerId;
+	
+	String firstName;
+	
+	String lastName;
+	
+	String email;
+	
+	String panNo;
+	
+	Date dob; 
+	
+	String contactNo;
+	
+	String password;
+	
+	@OneToOne(cascade=CascadeType.ALL)
+	Address address;
+	
+	
+	 
+	
+	
+
+}

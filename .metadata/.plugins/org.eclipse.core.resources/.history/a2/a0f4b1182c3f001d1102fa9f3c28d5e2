@@ -1,0 +1,15 @@
+package com.csp.Customer.Entity;
+
+public class Address {
+
+	String houseNo;
+	
+	String state;
+	
+	String country;
+	
+	String pincode;
+	
+	
+	
+}

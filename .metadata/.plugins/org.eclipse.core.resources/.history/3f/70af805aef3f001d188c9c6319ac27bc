@@ -1,0 +1,15 @@
+package com.csp.Customer.Repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+
+import com.csp.Customer.Entity.State;
+
+public interface StateRepository extends JpaRepository<State, Integer>{
+	
+	@Query("SELECT u fROM State u where u.countryId=?1")
+	List<State> findByCountryId(Integer countryId);
+
+}

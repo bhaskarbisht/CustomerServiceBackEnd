@@ -1,0 +1,13 @@
+package com.csp.Customer.Repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+
+import com.csp.Customer.Entity.State;
+
+public interface StateRepository extends JpaRepository<State, Integer>{
+	
+	@Query("SELECT u fROM tbl_states u where u.country_id=?1")
+	State findByEmail(String email);
+
+}

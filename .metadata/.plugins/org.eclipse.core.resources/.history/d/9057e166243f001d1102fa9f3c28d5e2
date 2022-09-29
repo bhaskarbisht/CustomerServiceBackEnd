@@ -1,0 +1,10 @@
+package com.csp.Customer.Entity;
+
+
+@Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class Customer {
+
+}
