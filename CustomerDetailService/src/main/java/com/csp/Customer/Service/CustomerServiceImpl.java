@@ -1,5 +1,7 @@
 package com.csp.Customer.Service;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,6 +24,12 @@ public class CustomerServiceImpl implements CustomerService{
 		
 		log.info("Customer saved with id={}",savedCustomer.getCustomerId());	
 		return savedCustomer.getCustomerId();
+	}
+
+	@Override
+	public Optional<Customer> findCustomerByEmail(String email) {
+		Customer user=customerRepository.findByEmail(email);
+		return Optional.ofNullable(user);
 	}
 
 
