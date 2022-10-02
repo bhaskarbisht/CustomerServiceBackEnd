@@ -25,7 +25,7 @@ public class CustomerRequest {
 	
 	String category;
 	
-	Boolean requestStatus;
+	String requestStatus;
 	
 	Date requestDate;
 	
