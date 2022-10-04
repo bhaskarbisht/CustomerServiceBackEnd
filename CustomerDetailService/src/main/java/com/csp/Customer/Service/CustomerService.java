@@ -10,5 +10,9 @@ public interface CustomerService {
 
 	Optional<Customer> findCustomerByEmail(String email);
 
+	Optional<Customer> getCustomerByid(Long id);
+
+	Customer updateCustomer(Customer customer, Long id);
+
 
 }

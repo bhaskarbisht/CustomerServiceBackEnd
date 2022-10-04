@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.CustomerRequest.Entity.CustomerRequest;
+import com.CustomerRequest.External.Client.CustomerDetailService;
 import com.CustomerRequest.Repository.CustomerRequestRepository;
 
 @Service
@@ -13,6 +14,8 @@ public class CustomerServiceImpl implements CustomerRequestService{
 	
 	@Autowired
 	CustomerRequestRepository customerRequestRepository;
+	
+
 
 	@Override
 	public Long saveCustomerRequest(CustomerRequest customerRequest) {
