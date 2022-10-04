@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import com.CustomerRequest.Entity.Customer;
+import com.CustomerRequest.Entity.CustomerRequest;
 
 
 @FeignClient(name="CustomerDetailService/")
@@ -20,5 +21,6 @@ public interface CustomerDetailService {
 	
 	@PutMapping("/update/{id}")
 	public ResponseEntity<Customer> updateCustomer(@PathVariable("id") Long id,@RequestBody Customer customer);
+
 
 }

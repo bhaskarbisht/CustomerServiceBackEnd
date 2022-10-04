@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -31,7 +32,7 @@ public class CustomerRequestController {
 	
 	
 	@PostMapping("/createCustomerRequest")
-	public ResponseEntity<Long> saveCustomer(@RequestBody CustomerRequest customerRequest){
+	public ResponseEntity<Long> saveCustomerRequest(@RequestBody CustomerRequest customerRequest){
 		
 		Long requestId=customerRequestService.saveCustomerRequest(customerRequest);
 		return new  ResponseEntity<>(requestId,HttpStatus.CREATED);
@@ -44,6 +45,23 @@ public class CustomerRequestController {
 		
 		
 		return customerRequestService.getAllCustomerRequest(customerId);
+	}
+	
+	@DeleteMapping("/delete/{id}")
+	public ResponseEntity<CustomerRequest> deleteRequest(@PathVariable Long id) {
+		ResponseEntity<CustomerRequest> responseEntity = new ResponseEntity<>(HttpStatus.OK);
+		try {
+			customerRequestService.deleteRequest(id);
+		} catch (Exception e) {
+			e.printStackTrace();
+			responseEntity = new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
+		return responseEntity;
+	}
+	
+	@PutMapping("/updateRequest/{id}")
+	public CustomerRequest updateRequest(@PathVariable("id") Long id,@RequestBody CustomerRequest customerRequest){
+		return customerRequestService.updateCustomerRequest(id, customerRequest);
 	}
 	
 	
