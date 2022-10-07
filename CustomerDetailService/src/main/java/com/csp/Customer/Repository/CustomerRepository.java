@@ -11,4 +11,6 @@ public interface CustomerRepository extends JpaRepository<Customer, Long>{
 
 	@Query("SELECT u fROM Customer u where u.email=?1")
 	Customer findByEmail(String email);
+
+	boolean existsByEmail(String email);
 }

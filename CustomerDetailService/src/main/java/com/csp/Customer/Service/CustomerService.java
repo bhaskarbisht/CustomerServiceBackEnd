@@ -14,5 +14,7 @@ public interface CustomerService {
 
 	Customer updateCustomer(Customer customer, Long id);
 
+	Boolean ifExistsUser(String email);
+
 
 }

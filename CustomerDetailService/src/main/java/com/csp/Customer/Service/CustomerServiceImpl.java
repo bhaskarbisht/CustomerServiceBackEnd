@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.csp.Customer.Entity.Customer;
+import com.csp.Customer.Model.LoginRequest;
 import com.csp.Customer.Repository.CustomerRepository;
 import com.csp.Customer.exception.ResourceNotFoundException;
 
@@ -52,6 +53,16 @@ public class CustomerServiceImpl implements CustomerService{
 
 		customerRepository.save(existingcustomer);
 		return existingcustomer;
+	}
+	
+	@Override
+	public Boolean ifExistsUser(String email) {
+		Customer customer= customerRepository.findByEmail(email);
+		if(customer != null)
+			return false;
+		else {
+			return true;
+		}
 	}
 
 

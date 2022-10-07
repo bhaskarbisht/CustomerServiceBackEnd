@@ -42,6 +42,8 @@ public class Customer {
 	@JoinColumn(name="fk_add_id")
 	private Address address;
 
+	
+
 
 
 

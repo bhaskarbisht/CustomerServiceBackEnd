@@ -48,7 +48,15 @@ public class CustomerController {
 		return null;
 			
 
+
 	}
+	
+	@PostMapping("/checkDuplicate")
+	public ResponseEntity<?> checkDuplicateUser(@RequestBody String email){
+		return ResponseEntity.ok(customerService.ifExistsUser(email));
+	}	
+	
+	
 	
 	@GetMapping("/customer/{id}")
 	public Optional<Customer> getCustomer(@PathVariable Long id) {
