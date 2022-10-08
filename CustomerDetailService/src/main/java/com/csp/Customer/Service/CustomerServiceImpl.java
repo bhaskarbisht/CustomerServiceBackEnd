@@ -59,9 +59,9 @@ public class CustomerServiceImpl implements CustomerService{
 	public Boolean ifExistsUser(String email) {
 		Customer customer= customerRepository.findByEmail(email);
 		if(customer != null)
-			return false;
-		else {
 			return true;
+		else {
+			return false;
 		}
 	}
 

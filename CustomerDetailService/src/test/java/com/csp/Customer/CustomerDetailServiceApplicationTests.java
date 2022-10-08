@@ -57,10 +57,10 @@ public void saveCustomerTest() {
 	
 }
 	
-@Test
-public void updateCustomerTest() {
-	when(customerRepository.save(customer)).thenReturn(customer);
-	assertEquals(customer, customerService.updateCustomer(customer,1L));
-}
+//@Test
+//public void updateCustomerTest() {
+//	when(customerRepository.save(customer)).thenReturn(customer);
+//	assertEquals(customer, customerService.updateCustomer(customer,1L));
+//}
 
 }
