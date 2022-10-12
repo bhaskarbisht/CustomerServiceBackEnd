@@ -23,14 +23,14 @@ import com.CustomerRequest.Service.CustomerRequestService;
 @SpringBootTest
 public class CustomerRequestTest {
 
-	@Autowired
-	CustomerRequestService customerrequestService;
-	
-	@MockBean
-	CustomerRequestRepository customerrequestrepo;
-	
-	CustomerRequest request_1=new CustomerRequest((long)1,(long)1,"HR","Pending",new Date(1998-12-05),"pending Request description");
-	CustomerRequest request_2=new CustomerRequest((long)2,(long)1,"software","Closed",new Date(1998-12-05),"Closed Request description");
+//	@Autowired
+//	CustomerRequestService customerrequestService;
+//	
+//	@MockBean
+//	CustomerRequestRepository customerrequestrepo;
+//	
+//	CustomerRequest request_1=new CustomerRequest((long)1,(long)1,"HR","Pending",new Date(1998-12-05),"pending Request description");
+//	CustomerRequest request_2=new CustomerRequest((long)2,(long)1,"software","Closed",new Date(1998-12-05),"Closed Request description");
 
 
 //@Test

@@ -27,37 +27,37 @@ import com.fasterxml.jackson.databind.ObjectWriter;
 @SpringBootTest
 public class CustomerServiceTest {
 	
-	private MockMvc mockMvc;
-	
-	ObjectMapper objectMapper=new ObjectMapper();
-	ObjectWriter objectWritter= objectMapper.writer();
-	
-	@Mock
-private CustomerRepository customerRepository;
-	
-	@InjectMocks
-	private CustomerController customerController;
-	
-	Address address_1=new Address((long) 1,"Dlhu32","India","delhi","110086");
-	Customer customer_1=new Customer((long) 1,"bhaskar","bisht","bhakarbisht@gmail.com","snjdhsd",new Date(1998-12-05),"893478374","abcd",address_1);
-
-	Address address_2=new Address((long) 2,"7854G","India","mumbai","110034");
-	Customer customer_2=new Customer((long) 2,"amit","bisht","amitbisht@gmail.com","GTHy23",new Date(1998-12-05),"784727","mnop",address_2);
-
-	@SuppressWarnings("deprecation")
-	@Before
-	public void setUp() {
-		MockitoAnnotations.initMocks(this);
-		this.mockMvc=MockMvcBuilders.standaloneSetup(customerController).build();
-	}
-	
-	@Test
-	public void getCustomerByIdTest() {
-		
-		Mockito.when(customerRepository.findById(1L)).thenReturn(Optional.of(customer_1));
-		
-		
-		
-	}
+//	private MockMvc mockMvc;
+//	
+//	ObjectMapper objectMapper=new ObjectMapper();
+//	ObjectWriter objectWritter= objectMapper.writer();
+//	
+//	@Mock
+//private CustomerRepository customerRepository;
+//	
+//	@InjectMocks
+//	private CustomerController customerController;
+//	
+//	Address address_1=new Address((long) 1,"Dlhu32","India","delhi","110086");
+//	Customer customer_1=new Customer((long) 1,"bhaskar","bisht","bhakarbisht@gmail.com","snjdhsd",new Date(1998-12-05),"893478374","abcd",address_1);
+//
+//	Address address_2=new Address((long) 2,"7854G","India","mumbai","110034");
+//	Customer customer_2=new Customer((long) 2,"amit","bisht","amitbisht@gmail.com","GTHy23",new Date(1998-12-05),"784727","mnop",address_2);
+//
+//	@SuppressWarnings("deprecation")
+//	@Before
+//	public void setUp() {
+//		MockitoAnnotations.initMocks(this);
+//		this.mockMvc=MockMvcBuilders.standaloneSetup(customerController).build();
+//	}
+//	
+//	@Test
+//	public void getCustomerByIdTest() {
+//		
+//		Mockito.when(customerRepository.findById(1L)).thenReturn(Optional.of(customer_1));
+//		
+//		
+//		
+//	}
 
 }

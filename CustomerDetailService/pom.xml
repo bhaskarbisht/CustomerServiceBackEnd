@@ -71,6 +71,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		<finalName>customer-detail-microservice</finalName>
 	</build>
 
 	<dependencyManagement>
