@@ -3,10 +3,11 @@ package com.csp.Customer.Service;
 import java.util.Optional;
 
 import com.csp.Customer.Entity.Customer;
+import com.csp.Customer.Model.CustomerModel;
 
 public interface CustomerService {
 
-	Long saveCustomer(Customer customer);
+	Long saveCustomer(CustomerModel customer);
 
 	Optional<Customer> findCustomerByEmail(String email);
 

@@ -5,6 +5,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.csp.Customer.Entity.Customer;
+import com.csp.Customer.Model.CustomerModel;
 import com.csp.Customer.Model.LoginRequest;
 import com.csp.Customer.Service.CustomerService;
 
@@ -27,7 +29,7 @@ public class CustomerController {
 	CustomerService customerService;
 	
 	@PostMapping("/createCustomer")
-	public ResponseEntity<Long> saveCustomer(@RequestBody Customer customer){
+	public ResponseEntity<Long> saveCustomer(@RequestBody CustomerModel customer){
 		
 		Long customerId=customerService.saveCustomer(customer);
 		return new  ResponseEntity<>(customerId,HttpStatus.CREATED);
@@ -36,13 +38,18 @@ public class CustomerController {
 	
 	@PostMapping("/login")
 	public Customer LoginUser(@RequestBody LoginRequest logindata) {
+		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 
 		Optional<Customer> user = customerService.findCustomerByEmail(logindata.getEmail());
 		if (user.isPresent()) {
 			Customer rs = user.get();
-			if (rs.getPassword().equals(logindata.getPassword())) {
+			if(encoder.matches(logindata.getPassword(), rs.getPassword())) {
 				return rs;
 			}
+			
+//			if (rs.getPassword().equals(logindata.getPassword())) {
+//				return rs;
+//			}
 			
 		}
 		return null;
